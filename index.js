@@ -28,5 +28,13 @@ app.use(passport.session());
 
 require('./routes/authRoutes')(app);
 
+app.set( 'port', ( process.env.PORT || 5000 ));
+
+// Start node server
+app.listen( app.get( 'port' ), function() {
+  console.log( 'Node server is running on port ' + app.get( 'port' ));
+  });
+
+/* 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT);
+app.listen(PORT); */
